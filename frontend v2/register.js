@@ -42,6 +42,7 @@ let RegisterUser = (e) => {
         uid: credentials.user.uid,
         email: userEmail.value,
       });
+      window.location.href = "login.html";
     })
     .catch((error) => {
       console.log(error.code);
