@@ -1,9 +1,9 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
 import {
-  getDatabase,
-  set,
-  ref,
-} from "https://www.gstatic.com/firebasejs/10.11.0/firebase-database.js";
+  getFirestore,
+  doc,
+  setDoc,
+} from "https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js";
 import {
   getAuth,
   createUserWithEmailAndPassword,
@@ -25,7 +25,7 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const db = getDatabase();
+const db = getFirestore();
 const auth = getAuth(app);
 
 const userEmail = document.querySelector("#email");
@@ -36,10 +36,11 @@ let RegisterUser = (e) => {
   e.preventDefault();
 
   createUserWithEmailAndPassword(auth, userEmail.value, userPassword.value)
-    .then((credentials) => {
-      set(ref(db, "UsersAuthList/" + credentials.user.uid), {
-        login: userEmail.value,
-        pass: userPassword.value,
+    .then(async (credentials) => {
+      var ref = doc(db, "UserAuthList", credentials.user.uid);
+      await setDoc(ref, {
+        uid: credentials.user.uid,
+        email: userEmail.value,
       });
     })
     .catch((error) => {

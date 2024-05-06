@@ -1,11 +1,10 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
 
 import {
-  getDatabase,
-  get,
-  ref,
-  child,
-} from "https://www.gstatic.com/firebasejs/10.11.0/firebase-database.js";
+  getFirestore,
+  doc,
+  getDoc,
+} from "https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js";
 import {
   getAuth,
   createUserWithEmailAndPassword,
@@ -26,10 +25,9 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-const db = getDatabase();
-
+const db = getFirestore();
 const auth = getAuth(app);
-const dbref = ref(db);
+
 const userEmail = document.querySelector("#email");
 const userPassword = document.querySelector("#password");
 const authForm = document.querySelector("#authForm");
@@ -38,25 +36,20 @@ let SignInUser = (e) => {
   e.preventDefault();
 
   signInWithEmailAndPassword(auth, userEmail.value, userPassword.value)
-    .then((credentials) => {
-      get(child(dbref, "UsersAuthList/" + credentials.user.uid)).then(
-        (snapshot) => {
-          if (snapshot.exists) {
-            sessionStorage.setItem(
-              "user-info",
-              JSON.stringify({
-                login: snapshot.val().login,
-                pass: snapshot.val().pass,
-              })
-            );
-            sessionStorage.setItem(
-              "user-creds",
-              JSON.stringify(credentials.user)
-            );
-            window.location.href = "main_page.html";
-          }
-        }
-      );
+    .then(async (credentials) => {
+      var ref = doc(db, "UserAuthList", credentials.user.uid);
+      const docSnap = await getDoc(ref);
+      if (docSnap.exists()) {
+        sessionStorage.setItem(
+          "user-info",
+          JSON.stringify({
+            uid: docSnap.data().uid,
+            email: docSnap.data().email,
+          })
+        );
+        sessionStorage.setItem("user-creds", JSON.stringify(credentials.user));
+        window.location.href = "main_page.html";
+      }
     })
     .catch((error) => {
       console.log(error.code);
