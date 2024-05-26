@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flash Learning - Decks Management</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="deck_add.css">
+</head>
+<body>
+
+    <div class="container-fluid nav-container">
+        <div class="nav">
+            <h1>Flash Learning</h1>
+            <div class="buttons">
+                <a href="main_page.html" class="btn btn-outline-secondary main-page-btn">← back to Main Page</a>
+                <a href="profile_page.html" class="btn btn-outline-secondary">Profile</a>
+                <a href="logout.html" class="btn btn-outline-secondary">Log out</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container main-container">
+        <div class="row">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-8">
+                <div class="create_deck">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h2 class="mb-0" id="title">Create a new deck</h2>
+                        <button type="submit" class="btn btn-outline-secondary ml-auto">Save deck</button>
+                    </div>
+                    <form>
+                        <div class="form-group">
+                            <label for="deckName">Deck Name<span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="deckName" placeholder="Enter deck name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="deckDescription">Description</label>
+                            <textarea class="form-control" id="deckDescription" rows="3" placeholder="Enter deck description"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="word">Word<span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="word" placeholder="Enter word" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="wordDescription">Word Description</label>
+                            <textarea class="form-control" id="wordDescription" rows="3" placeholder="Enter word description"></textarea>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div id="wordPreview" class="border border-secondary p-2">Word Preview</div>
+                            <!-- Tu myslalam zeby sie pojawiala taka mini fiszka pogladowa ale nie musi tego byc -->
+                            <button type="button" class="btn btn-outline-secondary ml-auto">Add another word</button>
+                        </div>
+                    </form>
+                    <div class="preview mt-3">
+                        <h4>Word List</h4>
+                        <ul class="wordList">
+                            <!-- Poglądowa lista -->
+                            <li>Word 1</li>
+                            <li>Word 2</li>
+                            <li>Word 3</li>
+                            <li>Word 4</li>
+                            <li>Word 5</li>
+                        </ul>
+                    </div>
+                </div>                  
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</body>
+</html>

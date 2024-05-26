@@ -1,0 +1,71 @@
+body {
+    background-color: #252535;
+    font-family: 'Roboto Slab', sans-serif; 
+    color: #D9D9D9; 
+  }
+  
+  .create-account-container {
+    max-width: 550px; 
+    margin: auto;
+    margin-top: 100px;
+    padding: 40px; 
+    background-color: #45364B;
+    border-radius: 20px; 
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2); 
+  }
+  
+  input.form-control {
+    background-color: #D9D9D9;
+    font-size: 18px; 
+  }
+  
+  .btn-create-account {
+    background-color: #D9D9D9;
+    font-size: 20px; 
+    box-shadow: 2px 5px 0px 0px rgba(128, 211, 155, 0.5); 
+  }
+  
+  .btn-create-account:hover,
+  .btn-create-account:active {
+    background-color: #7887B6;
+    box-shadow: 2px 6px 0px 0px rgba(128, 211, 155, 0.8); 
+  }
+  
+  .toggle-password {
+    color: #D9D9D9;
+  }
+  
+  .toggle-password:hover,
+  .toggle-password:active {
+    color: #7887B6;
+  }
+  
+  h2 {
+    color: #D9D9D9;
+    text-shadow: -1px -1px 0 #45364B, 1px -1px 0 #45364B, -1px 1px 0 #45364B, 1px 1px 0 #45364B;
+    font-size: 48px; 
+  }
+  
+  .log-in-btn {
+    position: absolute;
+    top: 30px; 
+    right: 30px; 
+    font-size: 18px; 
+  }
+  
+  .log-in-btn:hover,
+  .log-in-btn:active {
+    background-color: #7887B6; 
+  }
+  
+  .exit-icon {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: #80D39B; 
+    font-size: 24px; 
+  }
+  
+  .exit-icon:hover {
+    color: #7887B6; 
+  }
