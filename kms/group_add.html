@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flash Learning - Group Add</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="group_add.css">
+</head>
+<body>
+
+    <div class="container-fluid nav-container">
+        <div class="nav">
+            <h1>Flash Learning</h1>
+            <div class="buttons">
+                <a href="main_page.html" class="btn btn-outline-secondary main-page-btn">← back to Main Page</a>
+                <a href="profile_page.html" class="btn btn-outline-secondary">Profile</a>
+                <button class="btn btn-outline-secondary" id="logout">Log out</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container main-container">
+        <div class="row">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-8">
+                <div class="create_group">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h2 class="mb-0">Create a new group</h2>
+                        <button type="submit" class="btn btn-outline-secondary" id="createGroupBtn">Create group</button>
+                    </div>
+                    <form>
+                        <div class="form-group">
+                            <label for="groupName">Group Name<span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="groupName" placeholder="Enter group name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="groupDescription">Description</label>
+                            <textarea class="form-control" id="groupDescription" rows="3" placeholder="Enter group description"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="profileId">Add members</label>
+                            <input type="number" class="form-control" id="profileId" placeholder="Enter profile ID">
+                        </div>
+                        <button type="button" class="btn btn-outline-secondary" id="addMemberBtn">Add another member</button>
+                    </form>
+                    <div class="preview mt-3">
+                        <h4>Members List</h4>
+                        <ul class="membersList">
+                        </ul>
+                    </div>
+                </div>                  
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="group_add.js"></script>
+</body>
+</html>

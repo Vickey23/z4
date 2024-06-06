@@ -1,0 +1,97 @@
+body {
+    background-color: #252535;
+    font-family: 'Roboto Slab', sans-serif;
+    color: #D9D9D9;
+    margin: 0;
+}
+
+.nav-container {
+    padding: 20px;
+    text-transform: uppercase;
+}
+
+.nav h1 {
+    color: #D9D9D9;
+    text-shadow: -1px -1px 0 #45364B, 1px -1px 0 #45364B, -1px 1px 0 #45364B, 1px 1px 0 #45364B;
+    text-transform: uppercase;
+}
+
+.buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.btn {
+    background-color: #D9D9D9;
+    color: #252535;
+    font-size: 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    box-shadow: 2px 5px 0px 0px rgba(128, 211, 155, 0.5);
+}
+
+.main-container {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.flashcard-content {
+    background-color: #45364B;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    text-align: center;
+}
+
+.deck-info {
+    margin-bottom: 20px;
+}
+
+#deck-name {
+    background-color: #645969;
+    border-radius: 20px;
+    padding: 10px 15px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+}
+
+.flashcard {
+    background-color: #D9D9D9;
+    color: #252535;
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    font-size: 24px;
+    min-height: 200px;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.nav-button {
+    background-color: #D9D9D9;
+    color: #252535;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    box-shadow: 2px 5px 0px 0px rgba(128, 211, 155, 0.5);
+    cursor: pointer;
+}
+
+#remaining-cards {
+    font-size: 18px;
+    background-color: #645969;
+    color: #D9D9D9;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+}

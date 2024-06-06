@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flash Learning - Flashcards Mode</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="flashcards.css">
+</head>
+<body>
+    <div class="container-fluid nav-container d-flex justify-content-between align-items-center">
+        <h1>Flash Learning</h1>
+        <div class="buttons">
+            <a href="main_page.html" class="btn btn-outline-secondary main-page-btn">← back to Main Page</a>
+            <a href="profile_page.html" class="btn btn-outline-secondary">Profile</a>
+            <button class="btn btn-outline-secondary" id="logout">Log out</button>
+        </div>
+    </div>
+
+    <div class="container main-container">
+        
+        <div class="flashcard-content">
+            <div class="deck-selection">
+                <select id="deck-selector" class="form-control"></select>
+            </div><br>
+            <div class="deck-info">
+                <h2 id="deck-name">[Deck Name]</h2>
+            </div>
+            <div class="flashcard" id="flashcard">
+                Flashcard content goes here
+            </div>
+            <div class="navigation">
+                <button class="nav-button" id="not-sure">Not sure</button>
+                <div id="remaining-cards" class="remaining-cards">12 cards left</div>
+                <button class="nav-button" id="got-it">Got it</button>
+            </div>
+        </div>
+        <div class="preview mt-3">
+            <ul class="wordList">
+            </ul>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="flashcards.js"></script>
+    <script type="module" src="signout.js"></script>
+    
+</body>
+</html>

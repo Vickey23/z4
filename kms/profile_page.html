@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="profile_page.css">
+</head>
+<body>
+    <div class="container-fluid nav-container d-flex justify-content-between align-items-center">
+        <h1>Flash Learning</h1>
+        <div class="buttons">
+            <a href="main_page.html" class="btn btn-outline-secondary main-page-btn">← back to Main Page</a>
+            <button class="btn btn-outline-secondary" id="logout">Log out</button>
+        </div>
+    </div>
+
+    <div class="container profile-container">
+        <h2 class="mb-4">Profile</h2>
+        <div id="profile-info">
+            <p><strong>User ID:</strong> <span id="profile-id">123456</span></p>
+            <p><strong>Member Since:</strong> <span id="profile-member-since">January 1, 2020</span></p>
+            <p><strong>Name:</strong> <span id="profile-name">Test User</span></p>
+            <p><strong>Email:</strong> <span id="profile-email">test.user@example.com</span></p>
+            <button class="btn btn-primary" id="edit-profile-btn">Edit Profile</button>
+        </div>
+        <form id="edit-profile-form" class="d-none">
+            <div class="form-group">
+                <label for="edit-name">Name</label>
+                <input type="text" class="form-control" id="edit-name" value="Test User">
+            </div>
+            <div class="form-group">
+                <label for="edit-email">Email</label>
+                <input type="email" class="form-control" id="edit-email" value="test.user@example.com">
+            </div>
+            <button type="submit" class="btn btn-success">Save Changes</button>
+            <button type="button" class="btn btn-secondary" id="cancel-btn">Cancel</button>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#edit-profile-btn').click(function() {
+                $('#profile-info').toggleClass('d-none');
+                $('#edit-profile-form').toggleClass('d-none');
+            });
+
+            $('#cancel-btn').click(function() {
+                $('#profile-info').removeClass('d-none');
+                $('#edit-profile-form').addClass('d-none');
+            });
+        });
+    </script>
+
+    <script type="module" src="signout.js"></script>
+</body>
+</html>
