@@ -10,7 +10,7 @@ import {
   getDoc,
 } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js";
 
-const firebaseConfig = {
+export const firebaseConfig = {
   apiKey: "AIzaSyD_IKQbtBsM-c3iYqgUwJBHVTtEp6-y408",
   authDomain: "flash-e8583.firebaseapp.com",
   databaseURL:
@@ -56,6 +56,43 @@ async function createGroup(userId, groupName) {
   }
 }
 
-const userId = "Xx4iK4TEYBdeFBl0mY81maiZKgD3";
-const groupName = "Awesome Group";
-createGroup(userId, groupName);
+const groupName = "Grupa2";
+// createGroup(userId, groupName);
+
+export async function displayGroups(userId) {
+  const userRef = doc(db, "UserAuthList", userId);
+  const userDoc = await getDoc(userRef);
+
+  if (!userDoc.exists()) {
+    console.error("User does not exist");
+    return;
+  }
+
+  const groups = userDoc.data().groups;
+  const groupsContainer = document.getElementById("groups-container");
+
+  groupsContainer.innerHTML = "";
+
+  if (Array.isArray(groups) && groups.length > 0) {
+    for (const groupId of groups) {
+      const groupRef = doc(db, "Groups", groupId);
+      const groupDoc = await getDoc(groupRef);
+
+      if (groupDoc.exists()) {
+        const groupName = groupDoc.data().groupName;
+        const groupElement = document.createElement("div");
+        groupElement.className = "group-item";
+        groupElement.textContent = groupName;
+        groupsContainer.appendChild(groupElement);
+      }
+    }
+  }
+}
+
+const uidData = sessionStorage.getItem("user-info");
+if (uidData) {
+  const uid = JSON.parse(uidData).uid;
+  displayGroups(uid);
+} else {
+  console.error("User is not logged in");
+}
