@@ -41,6 +41,7 @@ let RegisterUser = (e) => {
       await setDoc(ref, {
         uid: credentials.user.uid,
         email: userEmail.value,
+        groups: [],
       });
       window.location.href = "login.html";
     })
